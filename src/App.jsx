@@ -13,9 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginPage />}>
             <Route index element={<Navigate replace to="fb" />} />
-            <Route path="fb" element={<LoginPage />} />
+            <Route path="/fb" element={<LoginPage />} />
 
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
