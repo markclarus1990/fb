@@ -1,0 +1,25 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 500px;
+  border: solid;
+  padding: 20px;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.7);
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.login-page .gl {
+  margin-top: auto;
+}
+
+@media (max-width: 430px) {
+  .login-page h1 {
+    text-align: center;
+  }
+}

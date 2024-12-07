@@ -1,5 +1,5 @@
 import { GoogleLogin } from "@react-oauth/google";
-
+import "./Login.css";
 function LoginPage() {
   const handleLoginSuccess = (response) => {
     console.log("Login Successful:", response);
@@ -12,14 +12,20 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-page">
-      <h1>Login to FaceBLog</h1>
-      <GoogleLogin
-        onSuccess={handleLoginSuccess}
-        onError={handleLoginError}
-        useOneTap={true} // Optional: for one-tap sign-in
-      />
-    </div>
+    <>
+      <article className="login">
+        <section className="login-page">
+          <h1>Login to FaceBLog</h1>
+          <div className="gl">
+            <GoogleLogin
+              onSuccess={handleLoginSuccess}
+              onError={handleLoginError}
+              useOneTap={true} // Optional: for one-tap sign-in
+            />
+          </div>
+        </section>
+      </article>
+    </>
   );
 }
 
