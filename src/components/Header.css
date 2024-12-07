@@ -1,0 +1,24 @@
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li:first-child {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+  gap: 10px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+nav ul li img {
+  border-radius: 80%;
+}

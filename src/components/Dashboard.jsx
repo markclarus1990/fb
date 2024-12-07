@@ -1,6 +1,13 @@
 import "./Dashboard.css";
+import { useAuth } from "../context/AuthContext";
+import Header from "./Header";
 function Dashboard() {
-  return <div>This is the dashboard</div>;
+  const { user, logout } = useAuth();
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default Dashboard;

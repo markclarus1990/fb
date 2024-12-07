@@ -1,14 +1,25 @@
 import { GoogleLogin } from "@react-oauth/google";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-function LoginPage() {
-  const navigate = useNavigate();
-  const handleLoginSuccess = (response) => {
-    console.log("Login Successful:", response);
-    // Here, you would send the token to your backend to verify and log the user in
-    // For example: send the response.credential to your server for authentication
+import { useAuth } from "../context/AuthContext";
+import { jwtDecode } from "jwt-decode";
 
-    navigate("/dashboard"); // Navigate to the dashboard page
+function LoginPage() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  //decode the credential
+
+  const handleLoginSuccess = (response) => {
+    const decodedToken = jwtDecode(response.credential);
+    const userName = decodedToken.given_name;
+    const pic = decodedToken.picture;
+    localStorage.setItem("auth", true);
+    localStorage.setItem("user", userName);
+    localStorage.setItem("pic", pic);
+    login();
+    console.log(decodedToken.picture);
+    navigate("fb/dashboard"); // Navigate to the dashboard page
   };
 
   const handleLoginError = (error) => {
