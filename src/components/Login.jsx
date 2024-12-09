@@ -14,11 +14,14 @@ function LoginPage() {
     const decodedToken = jwtDecode(response.credential);
     const userName = decodedToken.given_name;
     const pic = decodedToken.picture;
+    console.log("data", decodedToken);
     localStorage.setItem("auth", true);
     localStorage.setItem("user", userName);
     localStorage.setItem("pic", pic);
-    login();
-    console.log(decodedToken.picture);
+    localStorage.setItem("author", decodedToken.email);
+
+    login(decodedToken);
+
     navigate("fb/dashboard"); // Navigate to the dashboard page
   };
 

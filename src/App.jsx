@@ -5,8 +5,16 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { ProtectedRoute } from "./context/ProtectedRoute";
 import Header from "./components/Header";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 0,
+      },
+    },
+  });
   const clientId =
     "931880666628-lsoqfia38il4ukjce9fqnsovpa1725ad.apps.googleusercontent.com"; // Paste your Client ID here
 
@@ -14,21 +22,24 @@ function App() {
     <AuthProvider>
       <GoogleOAuthProvider clientId={clientId}>
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LoginPage />}>
-              <Route index element={<Navigate replace to="fb" />} />
-              <Route path="/fb" element={<LoginPage />} />
-            </Route>
+          <QueryClientProvider client={queryClient}>
+            <ReactQueryDevtools initialIsOpen={false} />
+            <Routes>
+              <Route path="/" element={<LoginPage />}>
+                <Route index element={<Navigate replace to="fb" />} />
+                <Route path="/fb" element={<LoginPage />} />
+              </Route>
 
-            <Route
-              path="fb/dashboard"
-              element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            ></Route>
-          </Routes>
+              <Route
+                path="fb/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              ></Route>
+            </Routes>
+          </QueryClientProvider>
         </BrowserRouter>
       </GoogleOAuthProvider>
     </AuthProvider>

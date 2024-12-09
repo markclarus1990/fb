@@ -1,0 +1,47 @@
+import "./INPUT.css";
+import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
+import Modal from "./MODAL";
+import BUTTON from "./BUTTON";
+function INPUT({ register }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+  const [hasPost, setHasPost] = useState(true);
+  const [post, setPost] = useState("");
+  const { user, data } = useAuth();
+  console.log(data.email);
+  return (
+    <div className="postClass">
+      <input
+        type="text"
+        className="btnModal"
+        onClick={openModal}
+        placeholder={`What's on your mind ${user.split(" ")[0]}?`}
+      />
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <input
+          type="text"
+          name="author"
+          value={localStorage.getItem("author")}
+          hidden
+          {...register("author")}
+        />
+        <textarea
+          name="post"
+          id="post"
+          value={post}
+          {...register("post")}
+          onChange={(e) => setPost(e.target.value)}
+        ></textarea>
+        <BUTTON type="submit" hasPost={post ? false : true}>
+          Post
+        </BUTTON>
+      </Modal>
+    </div>
+  );
+}
+
+export default INPUT;

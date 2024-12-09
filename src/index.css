@@ -13,6 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
+
+  --color-brand--1: #060119;
+  --color-brand--2: #0d0335;
+
+  --color-dark--0: #242a2e;
+  --color-dark--1: #2d3439;
+  --color-dark--2: #42484d;
+  --color-light--1: #aaa;
+  --color-light--2: #ececec;
+  --color-light--3: #d6dee0;
 }
 
 a {

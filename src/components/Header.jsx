@@ -1,4 +1,5 @@
 import "./Header.css";
+import "../../src/index.css";
 import { useAuth } from "../context/AuthContext";
 function Header() {
   const { user, logout, pic } = useAuth();

@@ -3,6 +3,10 @@ header nav ul {
   display: flex;
   gap: 20px;
 }
+header {
+  background-color: var(--color-brand--1);
+  color: var(--color-light--3);
+}
 
 header nav ul li:first-child {
   display: flex;

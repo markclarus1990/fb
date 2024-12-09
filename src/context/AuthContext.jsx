@@ -7,6 +7,7 @@ const initialState = {
   isLoading: false,
   isAuthenticated: localStorage.getItem("auth"),
   pic: localStorage.getItem("pic"),
+  data: localStorage.getItem("author"),
 };
 
 function reducer(state, action) {
@@ -17,6 +18,7 @@ function reducer(state, action) {
         user: localStorage.getItem("user"),
         isAuthenticated: localStorage.getItem("auth"),
         pic: localStorage.getItem("pic"),
+        data: localStorage.getItem("author"),
       };
     case "logout":
       return { initialState };
@@ -24,23 +26,26 @@ function reducer(state, action) {
 }
 
 function AuthProvider({ children }) {
-  const [{ user, pic, isAuthenticated }, dispatch] = useReducer(
+  const [{ data, user, pic, isAuthenticated }, dispatch] = useReducer(
     reducer,
     initialState
   );
 
-  function login() {
-    dispatch({ type: "login" });
+  function login(data) {
+    dispatch({ type: "login", payload: data });
   }
   function logout() {
     dispatch({ type: "logout" });
     localStorage.removeItem("user");
     localStorage.removeItem("auth");
     localStorage.removeItem("pic");
+    localStorage.getItem("author");
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, pic, isAuthenticated }}>
+    <AuthContext.Provider
+      value={{ data, user, login, logout, pic, isAuthenticated }}
+    >
       {children}
     </AuthContext.Provider>
   );
