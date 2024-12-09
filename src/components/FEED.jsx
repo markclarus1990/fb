@@ -50,7 +50,10 @@ function FEED({ data }) {
         <ul className="ul" key={el.id}>
           <article className="feeds-parent">
             <section className="feeds">
-              <div>{el?.fullname}</div>
+              <div className="p-prof">
+                <img src={localStorage.getItem("pic")} alt="profile" />
+                {el?.fullname}
+              </div>
 
               <li>
                 <textarea
