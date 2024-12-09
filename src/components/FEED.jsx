@@ -51,7 +51,7 @@ function FEED({ data }) {
           <article className="feeds-parent">
             <section className="feeds">
               <div className="p-prof">
-                <img src={localStorage.getItem("pic")} alt="profile" />
+                {/* <img src={localStorage.getItem("pic")} alt="profile" /> */}
                 {el?.fullname}
               </div>
 
