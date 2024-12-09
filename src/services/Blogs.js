@@ -37,10 +37,13 @@ export async function getBlogs() {
 
 export async function deleteBlog(id) {
   const { data, error } = await supabase.from("blog").delete().eq("id", id);
-
+  console.log(id);
   if (error) {
     console.error(error);
     throw new Error("Blog could not be deleted");
+  }
+  if (!error) {
+    console.log("success", data);
   }
   return data;
 }

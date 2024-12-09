@@ -1,0 +1,32 @@
+.feeds-parent {
+  display: flex;
+  justify-content: center;
+}
+.feeds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  color: aliceblue;
+}
+.gpost {
+  border-radius: 8px;
+  height: 200px;
+  width: 100%;
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.ul li {
+  width: 400px;
+}
+
+.btns {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}

@@ -8,6 +8,7 @@ function INPUT({ register }) {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
   const [hasPost, setHasPost] = useState(true);
   const [post, setPost] = useState("");
   const { user, data } = useAuth();
@@ -28,6 +29,13 @@ function INPUT({ register }) {
           value={localStorage.getItem("author")}
           hidden
           {...register("author")}
+        />
+        <input
+          type="text"
+          name="fullname"
+          value={localStorage.getItem("user")}
+          hidden
+          {...register("fullname")}
         />
         <textarea
           name="post"
