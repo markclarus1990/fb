@@ -19,7 +19,7 @@ function Dashboard() {
     <>
       <div className="dashboard">
         <Header />
-        <FORM />
+        <FORM className="form" />
         <FEED data={data} />
       </div>
     </>

@@ -1,3 +1,10 @@
+header {
+  background-color: var(--color-brand--1);
+  color: var(--color-light--3);
+  display: flex;
+  flex-direction: column;
+}
+
 header nav ul {
   color: rgb(112, 38, 190);
 
@@ -6,9 +13,8 @@ header nav ul {
   flex-direction: column;
   gap: 20px;
 }
-header {
-  background-color: var(--color-brand--1);
-  color: var(--color-light--3);
+header nav ul li {
+  font-family: sans-serif;
 }
 header nav ul li a {
   color: rgb(112, 38, 190);
@@ -20,10 +26,7 @@ header nav ul li:first-child {
   align-items: center;
   gap: 10px;
 }
-header {
-  display: flex;
-  flex-direction: column;
-}
+
 .links {
   display: flex;
   align-items: center;

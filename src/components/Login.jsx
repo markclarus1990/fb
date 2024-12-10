@@ -3,6 +3,7 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { jwtDecode } from "jwt-decode";
+import logo from "/logo3.png";
 
 function LoginPage() {
   const { login } = useAuth();
@@ -33,7 +34,8 @@ function LoginPage() {
     <>
       <article className="login">
         <section className="login-page">
-          <h1>Login to FaceBLog</h1>
+          <h1>FaceBLog</h1>
+          <img src={logo} alt="logo" />
           <div className="gl">
             <GoogleLogin
               onSuccess={handleLoginSuccess}

@@ -51,7 +51,7 @@ function INPUT({ register }) {
           {...register("post")}
           onChange={(e) => setPost(e.target.value)}
         ></textarea>
-        <BUTTON type="submit" hasPost={post ? false : true}>
+        <BUTTON type="submit" className="btnPost" hasPost={post ? false : true}>
           Post
         </BUTTON>
       </Modal>

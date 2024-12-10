@@ -21,7 +21,9 @@ function Header() {
                 <a href="">Messages</a>
               </li>
               <li>
-                <button onClick={() => logout()}>Logout</button>
+                <button className="btn btn-secondary" onClick={() => logout()}>
+                  Logout
+                </button>
               </li>
             </div>
           </ul>
