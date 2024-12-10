@@ -7,6 +7,7 @@ import { ProtectedRoute } from "./context/ProtectedRoute";
 import Header from "./components/Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import "./App.css";
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -24,7 +25,7 @@ function App() {
         <BrowserRouter>
           <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools initialIsOpen={false} />
-            <Routes>
+            <Routes className="appLayout">
               <Route path="/" element={<LoginPage />}>
                 <Route index element={<Navigate replace to="fb" />} />
                 <Route path="/fb" element={<LoginPage />} />

@@ -37,6 +37,13 @@ function INPUT({ register }) {
           hidden
           {...register("fullname")}
         />
+        <input
+          type="text"
+          name="pic"
+          value={localStorage.getItem("pic")}
+          hidden
+          {...register("pic")}
+        />
         <textarea
           name="post"
           id="post"

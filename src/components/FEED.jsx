@@ -43,7 +43,8 @@ function FEED({ data }) {
   function handleUpdate(updatedPost) {
     editMutate(updatedPost);
   }
-
+  console.log(data);
+  console.log(localStorage.getItem("author"));
   return (
     <>
       {data?.map((el) => (
@@ -51,7 +52,7 @@ function FEED({ data }) {
           <article className="feeds-parent">
             <section className="feeds">
               <div className="p-prof">
-                {/* <img src={localStorage.getItem("pic")} alt="profile" /> */}
+                <img src={el.pic} alt="profile" />
                 {el?.fullname}
               </div>
 
@@ -62,14 +63,18 @@ function FEED({ data }) {
                   onChange={(e) => handlePostChange(e, el.id)} // Update state correctly
                 ></textarea>
                 <div className="btns">
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => {
-                      mutateDelete(el.id);
-                    }} // Trigger delete mutation
-                  >
-                    Delete
-                  </button>
+                  {el.author === localStorage.getItem("author") ? (
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => {
+                        mutateDelete(el.id);
+                      }} // Trigger delete mutation
+                    >
+                      Delete
+                    </button>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </li>
             </section>

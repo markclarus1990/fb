@@ -1,9 +1,10 @@
-input {
+.btnModal {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  width: 100%;
+
   margin: 10px 0;
+  width: 1px;
 }
 
 .btnModal {
@@ -15,5 +16,18 @@ input {
 
 .postClass {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 30px;
+  margin: 30px;
+  align-items: center;
+}
+
+@media (max-width: 430px) {
+  .btnModal {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+
+    width: 300px;
+  }
 }
