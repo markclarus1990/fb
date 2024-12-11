@@ -1,9 +1,3 @@
-:root {
-  display: flex;
-  flex-direction: column;
-
-  padding: 100px;
-}
 .login {
   display: flex;
   flex-direction: column;

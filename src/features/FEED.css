@@ -45,4 +45,5 @@
 .gpost {
   width: 100%;
   background-color: rgb(102, 82, 123);
+  overflow-y: auto;
 }

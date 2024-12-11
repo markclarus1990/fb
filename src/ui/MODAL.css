@@ -34,3 +34,30 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+@media (max-width: 430px) {
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
+    z-index: 1000;
+  }
+  .modal-content {
+    background-color: rgb(43, 43, 44);
+    padding: 20px;
+    color: rgb(112, 38, 190);
+
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+}

@@ -2,10 +2,11 @@
   background-color: var(--color-dark--2);
   display: flex;
   flex-direction: column;
-  gap: 30px;
+
   background-color: rgb(26, 8, 46);
 
-  width: 500px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 @media (max-width: 430px) {
@@ -13,9 +14,10 @@
     background-color: var(--color-dark--2);
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    background-color: rgb(26, 8, 46);
 
-    width: 500px;
+    background-color: rgb(26, 8, 46);
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
   }
 }

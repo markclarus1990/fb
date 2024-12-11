@@ -1,10 +1,10 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import LoginPage from "./components/Login";
-import Dashboard from "./components/Dashboard";
+import LoginPage from "./features/Login";
+import Dashboard from "./features/Dashboard";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { ProtectedRoute } from "./context/ProtectedRoute";
-import Header from "./components/Header";
+import Header from "./features/Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "./App.css";

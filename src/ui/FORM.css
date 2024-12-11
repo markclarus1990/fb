@@ -3,3 +3,47 @@
   flex-direction: column;
   align-items: center;
 }
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.btnModal {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+
+  margin: 10px 0;
+  width: 1px;
+}
+
+.btnModal {
+  border-radius: 8px;
+  margin: 20px;
+
+  width: 100%;
+}
+
+.postClass {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+.btnPost {
+  background-color: aqua;
+  display: none;
+}
+textarea {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 430px) {
+  .btnModal {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+
+    width: 300px;
+  }
+}
