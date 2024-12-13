@@ -3,6 +3,8 @@ import "./FEED.css";
 import { editPost } from "../services/Blogs";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteBlog } from "../services/Blogs";
+import BUTTON from "../ui/BUTTON";
+import PAGINATION from "./PAGINATION";
 
 function FEED({ data }) {
   // State for posts
@@ -31,7 +33,23 @@ function FEED({ data }) {
   const { mutate: editMutate } = useMutation({
     mutationFn: editPost,
   });
+  // Set items per page
+  const itemsPerPage = 3;
 
+  // Calculate the number of pages
+  const totalPages = Math.ceil(data?.length / itemsPerPage);
+
+  // Set the initial page to 1
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Calculate the start and end indexes for the current page
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = data?.slice(startIndex, startIndex + itemsPerPage);
+
+  // Handle page change
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   // Handler to update post value in state
   const handlePostChange = (e, id) => {
     const updatedPosts = posts.map((post) =>
@@ -43,11 +61,11 @@ function FEED({ data }) {
   function handleUpdate(updatedPost) {
     editMutate(updatedPost);
   }
-  console.log(data);
+  console.log(data?.length);
   console.log(localStorage.getItem("author"));
   return (
     <>
-      {data?.map((el) => (
+      {currentItems?.map((el) => (
         <ul className="ul" key={el.id}>
           <article className="feeds-parent">
             <section className="feeds">
@@ -81,6 +99,11 @@ function FEED({ data }) {
           </article>
         </ul>
       ))}
+      <PAGINATION
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+        totalPages={totalPages}
+      />
     </>
   );
 }

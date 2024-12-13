@@ -1,8 +1,11 @@
 import "./BUTTON.css";
-function BUTTON({ hasPost, children, onClick }) {
-  console.log(hasPost);
+function BUTTON({ children, onClick, currentPage }) {
   return (
-    <button className="button-post" disabled={hasPost} onClick={() => onClick}>
+    <button
+      className="button-post"
+      disabled={currentPage === 1}
+      onClick={() => onClick(1)}
+    >
       {children}
     </button>
   );
