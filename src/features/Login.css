@@ -32,4 +32,10 @@
   .login-page h1 {
     text-align: center;
   }
+  .login-page {
+    height: 200px;
+    width: 100%;
+    padding: 430px;
+    padding-top: 250px;
+  }
 }

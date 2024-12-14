@@ -1,9 +1,9 @@
 import "./BUTTON.css";
-function BUTTON({ children, onClick, currentPage }) {
+function BUTTON({ children, onClick, currentPage, disabled }) {
   return (
     <button
       className="button-post"
-      disabled={currentPage === 1}
+      disabled={disabled}
       onClick={() => onClick(1)}
     >
       {children}

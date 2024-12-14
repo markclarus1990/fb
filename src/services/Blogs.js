@@ -26,7 +26,10 @@ export async function editPost(newPost) {
 }
 
 export async function getBlogs() {
-  const { data, error } = await supabase.from("blog").select("*");
+  const { data, error } = await supabase
+    .from("blog")
+    .select("*")
+    .order("created_at", { ascending: false }); // Orders by 'date' in descending order;
 
   if (error) {
     console.error(error);

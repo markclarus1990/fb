@@ -1,6 +1,7 @@
 import BUTTON from "../ui/BUTTON";
 import "./PAGINATION.css";
 function PAGINATION({ handlePageChange, currentPage, totalPages }) {
+  console.log(currentPage);
   return (
     <div className="x">
       <BUTTON onClick={handlePageChange} currentPage={currentPage}>
